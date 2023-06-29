@@ -1,0 +1,23 @@
+library("sqldf")
+# student <- read.csv(file = file.choose(), header = TRUE)
+df <- read.csv("students.csv")
+sqldf("select * from df")
+
+sqldf("select min(marks) from df")
+sqldf("select count(*) from df")
+sqldf("select * from df where roll_no > 3")
+sqldf("select * from df where marks < 24")
+sqldf("select * from df where name = 'A' ")
+sqldf("select DISTINCT(name) from df")
+
+min(df$marks)
+max(df$marks)
+sum(df$marks)
+nrow(df)
+ncol(df)
+nrow(df[df$marks > 24, ])
+nrow(df[df$marks > 57, ])
+
+sqldf("select name,marks from df where marks > 33")
+sqldf("select name from df where marks < 24")
+nrow(df[df$marks > 24, ])
